@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loading Animation</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#1e1e2f;
+    font-family:Arial;
+}
+
+/* Loader Container */
+.loader{
+    display:flex;
+    gap:10px;
+}
+
+/* Bouncing dots */
+.dot{
+    width:15px;
+    height:15px;
+    background:#4f46e5;
+    border-radius:50%;
+    animation:bounce 0.6s infinite alternate;
+}
+
+/* Delay for each dot */
+.dot:nth-child(2){
+    animation-delay:0.2s;
+}
+
+.dot:nth-child(3){
+    animation-delay:0.4s;
+}
+
+/* Animation */
+@keyframes bounce{
+    from{
+        transform:translateY(0);
+        opacity:0.5;
+    }
+    to{
+        transform:translateY(-20px);
+        opacity:1;
+    }
+}
+
+/* Text */
+p{
+    position:absolute;
+    top:60%;
+    color:white;
+    font-size:18px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="loader">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+</div>
+
+<p>Loading...</p>
+
+</body>
+</html>

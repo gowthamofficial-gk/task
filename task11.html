@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing Table</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+/* Container */
+.pricing-container{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+/* Card */
+.card{
+    background:white;
+    width:250px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    text-align:center;
+    padding:20px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+/* Header */
+.card h2{
+    margin-bottom:10px;
+}
+
+.price{
+    font-size:30px;
+    color:#4f46e5;
+    margin:10px 0;
+}
+
+/* Features */
+ul{
+    list-style:none;
+    margin:20px 0;
+}
+
+ul li{
+    padding:8px 0;
+    border-bottom:1px solid #eee;
+    font-size:14px;
+}
+
+/* Button */
+button{
+    padding:10px 20px;
+    border:none;
+    background:#4f46e5;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#3730a3;
+}
+
+/* Featured plan */
+.popular{
+    border:2px solid #4f46e5;
+    transform:scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<div class="pricing-container">
+
+    <div class="card">
+        <h2>Basic</h2>
+        <div class="price">₹199</div>
+        <ul>
+            <li>1 Website</li>
+            <li>10 GB Storage</li>
+            <li>Email Support</li>
+        </ul>
+        <button>Choose Plan</button>
+    </div>
+
+    <div class="card popular">
+        <h2>Pro</h2>
+        <div class="price">₹499</div>
+        <ul>
+            <li>5 Websites</li>
+            <li>50 GB Storage</li>
+            <li>Priority Support</li>
+        </ul>
+        <button>Choose Plan</button>
+    </div>
+
+    <div class="card">
+        <h2>Premium</h2>
+        <div class="price">₹999</div>
+        <ul>
+            <li>Unlimited Websites</li>
+            <li>200 GB Storage</li>
+            <li>24/7 Support</li>
+        </ul>
+        <button>Choose Plan</button>
+    </div>
+
+</div>
+
+</body>
+</html>
