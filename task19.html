@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weather App UI</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#4f46e5,#06b6d4);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* App container */
+.weather-app{
+    width:350px;
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Search */
+.search{
+    display:flex;
+    gap:10px;
+}
+
+.search input{
+    flex:1;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+.search button{
+    padding:10px;
+    border:none;
+    background:#4f46e5;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+/* Main weather */
+.main{
+    text-align:center;
+    margin-top:20px;
+}
+
+.main h2{
+    font-size:22px;
+}
+
+.temp{
+    font-size:50px;
+    margin:10px 0;
+}
+
+.desc{
+    color:gray;
+}
+
+/* Details */
+.details{
+    display:flex;
+    justify-content:space-between;
+    margin-top:20px;
+}
+
+.box{
+    background:#f4f4f4;
+    padding:10px;
+    border-radius:10px;
+    text-align:center;
+    width:30%;
+}
+
+/* Forecast */
+.forecast{
+    margin-top:20px;
+}
+
+.days{
+    display:flex;
+    justify-content:space-between;
+    margin-top:10px;
+}
+
+.day{
+    background:#f4f4f4;
+    padding:10px;
+    border-radius:10px;
+    text-align:center;
+    width:30%;
+}
+</style>
+</head>
+
+<body>
+
+<div class="weather-app">
+
+    <!-- Search -->
+    <div class="search">
+        <input type="text" id="city" placeholder="Enter city...">
+        <button onclick="getWeather()">Search</button>
+    </div>
+
+    <!-- Main -->
+    <div class="main">
+        <h2 id="cityName">Chennai</h2>
+        <div class="temp" id="temp">32°C</div>
+        <div class="desc" id="desc">Sunny</div>
+    </div>
+
+    <!-- Details -->
+    <div class="details">
+        <div class="box">
+            <h4>Humidity</h4>
+            <p>60%</p>
+        </div>
+        <div class="box">
+            <h4>Wind</h4>
+            <p>12 km/h</p>
+        </div>
+        <div class="box">
+            <h4>Pressure</h4>
+            <p>1012</p>
+        </div>
+    </div>
+
+    <!-- Forecast -->
+    <div class="forecast">
+        <h3>3-Day Forecast</h3>
+
+        <div class="days">
+            <div class="day">
+                <p>Mon</p>
+                <p>31°C</p>
+            </div>
+            <div class="day">
+                <p>Tue</p>
+                <p>29°C</p>
+            </div>
+            <div class="day">
+                <p>Wed</p>
+                <p>30°C</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function getWeather(){
+    let city = document.getElementById("city").value;
+
+    if(city.trim() === ""){
+        alert("Enter a city name");
+        return;
+    }
+
+    // Dummy UI update (no API used)
+    document.getElementById("cityName").innerText = city;
+    document.getElementById("temp").innerText = Math.floor(Math.random()*10 + 25) + "°C";
+    document.getElementById("desc").innerText = "Partly Cloudy";
+}
+</script>
+
+</body>
+</html>

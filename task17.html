@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dropdown Menu</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#1e1e2f;
+}
+
+/* Navbar */
+.navbar{
+    background:#111;
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:white;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
+
+/* Menu */
+.menu{
+    list-style:none;
+    display:flex;
+}
+
+.menu li{
+    position:relative;
+    margin-left:20px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:white;
+    padding:8px 12px;
+    display:block;
+}
+
+/* Dropdown */
+.dropdown{
+    display:none;
+    position:absolute;
+    top:40px;
+    left:0;
+    background:white;
+    min-width:150px;
+    border-radius:5px;
+    overflow:hidden;
+}
+
+.dropdown a{
+    color:#111;
+    padding:10px;
+}
+
+.dropdown a:hover{
+    background:#f4f4f4;
+}
+
+/* Show dropdown */
+.menu li.active .dropdown{
+    display:block;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .menu{
+        flex-direction:column;
+        background:#111;
+        position:absolute;
+        top:60px;
+        right:0;
+        width:200px;
+        display:none;
+    }
+
+    .menu.show{
+        display:flex;
+    }
+
+    .menu li{
+        margin:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="logo">MySite</div>
+
+    <ul class="menu" id="menu">
+        <li><a href="#">Home</a></li>
+
+        <li onclick="toggleDropdown(this)">
+            <a href="#">Services ▼</a>
+            <div class="dropdown">
+                <a href="#">Web Design</a>
+                <a href="#">SEO</a>
+                <a href="#">Marketing</a>
+            </div>
+        </li>
+
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+
+    <button onclick="toggleMenu()" style="background:#4f46e5;color:white;border:none;padding:8px 12px;border-radius:5px;cursor:pointer;">
+        Menu
+    </button>
+</nav>
+
+<script>
+function toggleDropdown(el){
+    el.classList.toggle("active");
+}
+
+function toggleMenu(){
+    document.getElementById("menu").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>
