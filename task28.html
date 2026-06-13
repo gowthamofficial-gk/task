@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Website</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    color:#111;
+}
+
+/* Navbar */
+header{
+    background:#111;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 30px;
+    position:sticky;
+    top:0;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    margin-left:20px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#4f46e5;
+}
+
+/* Hero */
+.hero{
+    height:90vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(135deg,#4f46e5,#06b6d4);
+    color:white;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:50px;
+}
+
+.hero p{
+    font-size:18px;
+    margin:10px 0 20px;
+}
+
+.btn{
+    padding:12px 20px;
+    border:none;
+    border-radius:8px;
+    background:white;
+    color:#4f46e5;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#ddd;
+}
+
+/* About */
+.section{
+    padding:60px 20px;
+    text-align:center;
+}
+
+.section h2{
+    margin-bottom:20px;
+}
+
+/* Skills */
+.skills{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.skill{
+    background:white;
+    padding:10px 15px;
+    border-radius:8px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Projects */
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+    gap:20px;
+    padding:20px;
+}
+
+.project{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.project img{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+}
+
+.project p{
+    padding:10px;
+}
+
+/* Contact */
+form{
+    max-width:400px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+input, textarea{
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+button{
+    padding:10px;
+    background:#4f46e5;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+/* Footer */
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <div class="logo">MyPortfolio</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="home">
+    <h1>Hi, I'm Developer</h1>
+    <p>Frontend Developer | UI Designer | Student</p>
+    <button class="btn">Hire Me</button>
+</section>
+
+<!-- About -->
+<section class="section" id="about">
+    <h2>About Me</h2>
+    <p>I am a passionate web developer learning modern frontend technologies.</p>
+
+    <h3 style="margin-top:20px;">Skills</h3>
+    <div class="skills">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">UI Design</div>
+    </div>
+</section>
+
+<!-- Projects -->
+<section class="section" id="projects">
+    <h2>Projects</h2>
+
+    <div class="projects">
+
+        <div class="project">
+            <img src="https://picsum.photos/400/300?1">
+            <p>Landing Page Design</p>
+        </div>
+
+        <div class="project">
+            <img src="https://picsum.photos/400/300?2">
+            <p>Calculator App</p>
+        </div>
+
+        <div class="project">
+            <img src="https://picsum.photos/400/300?3">
+            <p>To-Do List App</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Contact -->
+<section class="section" id="contact">
+    <h2>Contact Me</h2>
+
+    <form onsubmit="sendMsg(event)">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Message"></textarea>
+        <button type="submit">Send</button>
+    </form>
+</section>
+
+<footer>
+    © 2026 MyPortfolio | All Rights Reserved
+</footer>
+
+<script>
+function sendMsg(e){
+    e.preventDefault();
+    alert("Message sent successfully!");
+}
+</script>
+
+</body>
+</html>

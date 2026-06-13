@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Countdown Timer</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#1e1e2f;
+    color:white;
+}
+
+/* Container */
+.timer-box{
+    background:#2c2c3e;
+    padding:25px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    width:320px;
+}
+
+/* Display */
+.time{
+    font-size:40px;
+    margin:20px 0;
+    letter-spacing:2px;
+}
+
+/* Input */
+input{
+    width:100%;
+    padding:10px;
+    border:none;
+    border-radius:8px;
+    margin-top:10px;
+    text-align:center;
+    font-size:16px;
+}
+
+/* Buttons */
+button{
+    margin:8px 5px;
+    padding:10px 15px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    background:#4f46e5;
+    color:white;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#3730a3;
+}
+</style>
+</head>
+
+<body>
+
+<div class="timer-box">
+
+    <h2>Countdown Timer</h2>
+
+    <input type="number" id="secondsInput" placeholder="Enter seconds">
+
+    <div class="time" id="display">00:00</div>
+
+    <button onclick="startTimer()">Start</button>
+    <button onclick="resetTimer()">Reset</button>
+
+</div>
+
+<script>
+let timeLeft = 0;
+let timer;
+
+function updateDisplay(){
+    let min = Math.floor(timeLeft / 60);
+    let sec = timeLeft % 60;
+
+    document.getElementById("display").innerText =
+        String(min).padStart(2,'0') + ":" + String(sec).padStart(2,'0');
+}
+
+function startTimer(){
+    if(timer) return;
+
+    timeLeft = document.getElementById("secondsInput").value;
+
+    if(timeLeft <= 0){
+        alert("Enter valid seconds");
+        return;
+    }
+
+    updateDisplay();
+
+    timer = setInterval(() => {
+        if(timeLeft <= 0){
+            clearInterval(timer);
+            timer = null;
+            alert("Time's up!");
+        } else {
+            timeLeft--;
+            updateDisplay();
+        }
+    }, 1000);
+}
+
+function resetTimer(){
+    clearInterval(timer);
+    timer = null;
+    timeLeft = 0;
+    document.getElementById("display").innerText = "00:00";
+    document.getElementById("secondsInput").value = "";
+}
+</script>
+
+</body>
+</html>
