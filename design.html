@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landing Page</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    line-height:1.6;
+}
+
+/* Navbar */
+header{
+    background:#111;
+    color:white;
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+header .logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+header ul{
+    list-style:none;
+    display:flex;
+}
+
+header ul li{
+    margin-left:20px;
+}
+
+header ul li a{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+header ul li a:hover{
+    color:#00bcd4;
+}
+
+/* Hero Section */
+.hero{
+    height:90vh;
+    background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f') center/cover;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:50px;
+}
+
+.hero p{
+    font-size:18px;
+    margin:15px 0;
+}
+
+.btn{
+    padding:12px 25px;
+    background:#00bcd4;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#0097a7;
+}
+
+/* Features Section */
+.features{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    padding:50px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    width:250px;
+    text-align:center;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .hero h1{
+        font-size:32px;
+    }
+
+    header{
+        flex-direction:column;
+    }
+
+    header ul{
+        flex-direction:column;
+        margin-top:10px;
+    }
+
+    header ul li{
+        margin:10px 0;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <div class="logo">MyBrand</div>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</header>
+
+<section class="hero">
+    <h1>Build Your Dream Website</h1>
+    <p>Create modern and responsive websites easily</p>
+    <button class="btn">Get Started</button>
+</section>
+
+<section class="features">
+    <div class="card">
+        <h3>Fast</h3>
+        <p>Optimized performance for better speed.</p>
+    </div>
+
+    <div class="card">
+        <h3>Responsive</h3>
+        <p>Works on all devices perfectly.</p>
+    </div>
+
+    <div class="card">
+        <h3>Modern UI</h3>
+        <p>Clean and professional design.</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 MyBrand. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
