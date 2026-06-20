@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Social Media Feed</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f0f2f5;
+}
+
+/* Navbar */
+.navbar{
+    background:#1877f2;
+    color:white;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+}
+
+.navbar h2{
+    font-size:28px;
+}
+
+.navbar input{
+    width:250px;
+    padding:8px;
+    border:none;
+    border-radius:20px;
+}
+
+/* Feed */
+.feed{
+    max-width:700px;
+    margin:20px auto;
+}
+
+.post{
+    background:white;
+    border-radius:10px;
+    margin-bottom:20px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+    overflow:hidden;
+}
+
+.post-header{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:15px;
+}
+
+.post-header img{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+}
+
+.post-header h4{
+    margin-bottom:3px;
+}
+
+.post-image{
+    width:100%;
+    height:400px;
+    object-fit:cover;
+}
+
+.post-content{
+    padding:15px;
+}
+
+.actions{
+    display:flex;
+    justify-content:space-around;
+    border-top:1px solid #ddd;
+    padding:10px;
+}
+
+.actions button{
+    border:none;
+    background:none;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.actions button:hover{
+    color:#1877f2;
+}
+
+@media(max-width:768px){
+    .navbar input{
+        width:150px;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <h2>SocialFeed</h2>
+    <input type="text" placeholder="Search">
+</div>
+
+<!-- Feed -->
+<div class="feed">
+
+    <!-- Post 1 -->
+    <div class="post">
+        <div class="post-header">
+            <img src="https://randomuser.me/api/portraits/men/10.jpg">
+            <div>
+                <h4>Arun Kumar</h4>
+                <small>2 hours ago</small>
+            </div>
+        </div>
+
+        <img class="post-image"
+        src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800">
+
+        <div class="post-content">
+            <p>🌄 Beautiful evening view. Enjoying nature!</p>
+        </div>
+
+        <div class="actions">
+            <button onclick="likePost()">👍 Like</button>
+            <button>💬 Comment</button>
+            <button>📤 Share</button>
+        </div>
+    </div>
+
+    <!-- Post 2 -->
+    <div class="post">
+        <div class="post-header">
+            <img src="https://randomuser.me/api/portraits/women/15.jpg">
+            <div>
+                <h4>Priya</h4>
+                <small>5 hours ago</small>
+            </div>
+        </div>
+
+        <img class="post-image"
+        src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800">
+
+        <div class="post-content">
+            <p>☕ Working with coffee and coding.</p>
+        </div>
+
+        <div class="actions">
+            <button onclick="likePost()">👍 Like</button>
+            <button>💬 Comment</button>
+            <button>📤 Share</button>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function likePost(){
+    alert("👍 Post Liked!");
+}
+</script>
+
+</body>
+</html>

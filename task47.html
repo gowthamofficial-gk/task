@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat Application</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#e5ddd5;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.chat-container{
+    width:400px;
+    height:650px;
+    background:#fff;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 4px 15px rgba(0,0,0,0.2);
+    display:flex;
+    flex-direction:column;
+}
+
+/* Header */
+.chat-header{
+    background:#075e54;
+    color:white;
+    padding:15px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.chat-header img{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+}
+
+/* Messages */
+.chat-body{
+    flex:1;
+    padding:15px;
+    overflow-y:auto;
+    background:#ece5dd;
+}
+
+.message{
+    max-width:75%;
+    padding:10px;
+    margin-bottom:10px;
+    border-radius:10px;
+}
+
+.received{
+    background:white;
+}
+
+.sent{
+    background:#dcf8c6;
+    margin-left:auto;
+}
+
+/* Input */
+.chat-footer{
+    display:flex;
+    padding:10px;
+    background:#f0f0f0;
+}
+
+.chat-footer input{
+    flex:1;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:20px;
+    outline:none;
+}
+
+.chat-footer button{
+    margin-left:10px;
+    padding:10px 15px;
+    border:none;
+    background:#25d366;
+    color:white;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+@media(max-width:500px){
+    .chat-container{
+        width:100%;
+        height:100vh;
+        border-radius:0;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="chat-container">
+
+    <!-- Header -->
+    <div class="chat-header">
+        <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="User">
+        <div>
+            <h3>Arun</h3>
+            <small>Online</small>
+        </div>
+    </div>
+
+    <!-- Messages -->
+    <div class="chat-body" id="chatBody">
+        <div class="message received">
+            Hi! How are you?
+        </div>
+
+        <div class="message sent">
+            I'm fine. How about you?
+        </div>
+    </div>
+
+    <!-- Input -->
+    <div class="chat-footer">
+        <input type="text" id="messageInput" placeholder="Type a message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+</div>
+
+<script>
+function sendMessage(){
+
+    let input = document.getElementById("messageInput");
+    let message = input.value.trim();
+
+    if(message === "") return;
+
+    let chatBody = document.getElementById("chatBody");
+
+    let msgDiv = document.createElement("div");
+    msgDiv.classList.add("message","sent");
+    msgDiv.innerText = message;
+
+    chatBody.appendChild(msgDiv);
+
+    chatBody.scrollTop = chatBody.scrollHeight;
+
+    input.value = "";
+}
+</script>
+
+</body>
+</html>
