@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout Page</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    padding:20px;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:20px;
+}
+
+.checkout-form,
+.order-summary{
+    background:#fff;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+h2{
+    margin-bottom:20px;
+}
+
+.input-group{
+    margin-bottom:15px;
+}
+
+.input-group label{
+    display:block;
+    margin-bottom:5px;
+}
+
+.input-group input,
+.input-group textarea,
+.input-group select{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.order-item{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:10px;
+}
+
+.total{
+    margin-top:15px;
+    font-size:22px;
+    font-weight:bold;
+    color:green;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    background:#28a745;
+    color:white;
+    font-size:18px;
+    border-radius:5px;
+    cursor:pointer;
+    margin-top:15px;
+}
+
+button:hover{
+    background:#218838;
+}
+
+@media(max-width:768px){
+    .container{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Checkout Form -->
+    <div class="checkout-form">
+        <h2>Checkout Details</h2>
+
+        <div class="input-group">
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter your name">
+        </div>
+
+        <div class="input-group">
+            <label>Email</label>
+            <input type="email" placeholder="Enter your email">
+        </div>
+
+        <div class="input-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="Enter phone number">
+        </div>
+
+        <div class="input-group">
+            <label>Address</label>
+            <textarea rows="4" placeholder="Enter address"></textarea>
+        </div>
+
+        <div class="input-group">
+            <label>Payment Method</label>
+            <select>
+                <option>Cash on Delivery</option>
+                <option>UPI</option>
+                <option>Credit Card</option>
+                <option>Debit Card</option>
+            </select>
+        </div>
+
+        <button onclick="placeOrder()">Place Order</button>
+    </div>
+
+    <!-- Order Summary -->
+    <div class="order-summary">
+        <h2>Order Summary</h2>
+
+        <div class="order-item">
+            <span>Smartphone</span>
+            <span>₹20,000</span>
+        </div>
+
+        <div class="order-item">
+            <span>Headphones</span>
+            <span>₹2,000</span>
+        </div>
+
+        <hr>
+
+        <div class="total">
+            Total: ₹22,000
+        </div>
+    </div>
+
+</div>
+
+<script>
+function placeOrder(){
+    alert("✅ Order Placed Successfully!");
+}
+</script>
+
+</body>
+</html>
